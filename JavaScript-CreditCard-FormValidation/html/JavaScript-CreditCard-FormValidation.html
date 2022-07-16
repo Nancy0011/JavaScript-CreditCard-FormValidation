@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html>
+<!--
+Name: Nancy
+Date written: 1/12/2019
+Assignment Order Form2 
+-->
+
+
+
+<!-- Pseudocode
+
+PROGRAM: Form1
+INPUT
+	first name, last name, post code, email, credit card, CVV number, credit card, expiry date.
+On submit = return validate Form():
+	END
+MODULE validateForm()
+	if 
+		firstname.value=="" then 
+			OUTPUT error message set focus on input field
+	Return false
+	END if
+	
+	if 
+		lastname.value=="" then
+			OUTPUT error message set focus on input field
+			Return false
+	END if
+	
+	if 
+		postcode.value.length!=4  || isNaN(postcode.value then
+			OUTPUT error message set focus on input field
+		Return false
+	END if	
+	
+	if 
+		email.value.length<8 || email.value.indexOf("@") && email.value.indexOf(".")== -1 then
+			OUTPUT error message set focus on input field
+	Return false
+	END if
+	
+	if 
+		credit card not selected then
+			OUTPUT: change the text colour to red
+		Return false
+	END if
+	
+	if cardnumber.value.length!=16  || isNaN(cardnumber.value) then
+			OUTPUT error message set focus on input field
+		Return false
+	END if
+	
+	if ccv.value.length!=3  || isNaN(ccv.value) then
+			OUTPUT error message set focus on input field
+		Return false
+	END if
+	
+	if 
+		Month is = 0 or less than the current month then
+			OUTPUT error message set focus on input field
+		Return false
+	END if
+	
+	if 
+		Year is = 0 or less than the current year then
+			OUTPUT error message set focus on input field
+		Return false
+	END if
+	
+On submit check if all fields are correct
+	OUTPUT:Thank you for your submission
+Return true
+
+END validate Form() -->
+
+
+
+<!-- Pseudocode
+PROGRAM go to other websites
+	INPUT choice(1-4)
+Process:
+	switch case(choice) = 1    then
+	OUTPUT:www.google.com
+	switch case(choice) = 2    then
+	OUTPUT:www.tafesa.edu.au
+	switch case(choice) = 3    then
+	OUTPUT:www.learn.tafesa.edu.au
+	switch case(choice) = 4    then
+	OUTPUT:www.satac.edu.au
+	default:
+	OUTPUT Please enter 1 & 4,Thanks!
+	ENDSWITCH
+-->
+
+
+<head>
+<title>AssignmentPart2</title>
+</head>
+<body>
+<div id="demo"/>
+<form name="userForm" onsubmit="return validateForm()" >
+<fieldset id ="CustomerDetails">
+		<legend>Customer Details</legend>
+	<label for = "fname">First Name </label><input type="text" id="firstname" onfocus="changeBgd(this)" onblur="resetBgd(this)" size="30"/>
+	<span id="firstnameError"></span><br /><br />
+	<label for = "lname">Last Name </label><input type="text" id="lastname" onfocus="changeBgd(this)" onblur="resetBgd(this)" size="30"/>
+	<span id="lastnameError"></span><br/><br/>
+	<label for = "postc">Post Code </label><input type="text" id="postcode" onfocus="changeBgd(this)" onblur="resetBgd(this)" size="30"/>
+	<span id="postcodeError"></span><br/><br/>
+	<label for = "email">Email </label><input type="text" id="email" onfocus="changeBgd(this)" onblur="resetBgd(this)" size="30"/>
+	<span id="emailError"></span><br/><br/>
+</fieldset>
+<fieldset id ="Payment Details">
+	<legend>Payment Details</legend>
+	<label for = "creditcard">Credit Card </label>
+	<select id ="creditcard">
+    <option value="0">Select a payment option</option>
+    <option value="visa">VISA</option>
+    <option value="master">Mastercard</option>
+    <option value="amer">American Express</option>
+	</select><br/><br/>
+	
+	<label for = "cardnumber">Card Number </label><input type="text" id="cardnumber" onfocus="changeBgd(this)" onblur="resetBgd(this)" size="30"/>
+	<span id="cardnumberError"></span><br/><br/>
+	
+	<label for = "CCV">CCV </label><input type="text" id="ccv" onfocus="changeBgd(this)" onblur="resetBgd(this)" size="30"/>
+	<span id="ccvError"></span><br/><br/>
+	
+	<label for = "exmmyy">Expiry MM/YY </label>
+	<select id = "exMonth" title="Select a Month">
+	<option value="1">January</option>
+	<option value="2">Feburary</option>
+	<option value="3">March</option>
+	<option value="4">April</option>
+	<option value="5">May</option>
+	<option value="6">June</option>
+	<option value="7">July</option>
+	<option value="8">August</option>
+	<option value="9">September</option>
+	<option value="10">October</option>
+	<option value="11">November</option>
+	<option value="12">December</option>
+	</select>/
+	<select id="exYear" title="Select a year">
+    <option value="2019">2019</option>
+    <option value="2020">2020</option>
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+    <option value="2023">2023</option>
+    <option value="2024">2024</option>
+    <option value="2025">2025</option>
+    <option value="2026">2026</option>
+    <option value="2027">2027</option>
+    <option value="2028">2028</option>
+    <option value="2029">2029</option>
+    <option value="2030">2030</option>
+    <option value="2031">2031</option>
+	<option value="2032">2032</option>
+	<option value="2033">2033</option>
+	<option value="2034">2034</option>
+	<option value="2035">2035</option>
+	</select><br/><br/>
+</fieldset><br/><br/>
+
+<input type = "submit" name ="button" value="Submit Form"/>
+<!-- <input type = "button" onclick ="Help()" name ="button" value="Help"/><br/><br/> -->
+<button type = "button" onClick="help()">Help</button><br/><br/>
+<form/>
+
+<button type = "button" onClick="otherWebsites()">go to other websites</button>
+
+<script src="../js/JavaScript-CreditCard-FormValidation.js">
+</script>
+</body>
+</html>
